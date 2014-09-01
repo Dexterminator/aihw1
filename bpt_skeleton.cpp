@@ -2,17 +2,25 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 int main(int argc, char **argv)
 {
     // Read the board
-    std::vector<std::string> board;
-    for (std::string line; std::getline(std::cin, line);)
+    vector<string> board;
+    int i = 0;
+    for (string line; getline(cin, line);) {
         board.push_back(line);
+        if (line.find("@") != string::npos)
+        {
+        	cout << "Found player at line: " << i << "\n";
+        }
+        i++;
+    }
 
     // TODO: Find path to goal
 
     // Output answer
-    std::cout << "U R R U" << std::endl;
+    // cout << "U R R U" << endl;
     return 0;
 }
-
